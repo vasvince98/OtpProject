@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Test {
+public class RestTestController {
 
     private final TestService testService;
 
     @Autowired
-    public Test(TestService testService) {
+    public RestTestController(TestService testService) {
         this.testService = testService;
     }
 
