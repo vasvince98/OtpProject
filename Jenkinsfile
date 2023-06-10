@@ -7,7 +7,7 @@ pipeline {
                 echo 'Building...'
             }
         }
-        stage('Test') {
+        stage('Make') {
             steps {
                 echo 'Testing'
                 echo env.BRANCH_NAME
@@ -19,6 +19,7 @@ pipeline {
             }
             steps {
                 echo 'Deploying....'
+                sh 'make'
             }
         }
     }
