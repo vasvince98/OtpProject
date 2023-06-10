@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Copy the workdir to home') {
             steps {
-                sh 'cp -r . /home'
+                sh 'sudo cp -r . /home'
             }
         }
         stage('Deploy') {
