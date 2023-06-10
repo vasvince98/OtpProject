@@ -15,6 +15,7 @@ I will write my work steps in the following section:
 * I wrote the [Docker-compose file](./docker-compose.yaml) for the project, and I tested it. Tried to pass the db credentials threw env.variable to application.properties, but I realized the project should be built inside the container to work. Right now I made the build locally, and copy the target folder to the container. (2023.06.09)
 * I had a tiny problem at this point. When I tried to count the .target files for test reasons inside the container, I realized that the base alpine linux image does not use systemd. 
 * Changed the base image from alpine linux to default [openjdk image](https://hub.docker.com/layers/library/eclipse-temurin/17-jdk/images/sha256-b0faf02bf7acfc65be1c2d0a291140300bd129620f145bf1013a1da748295d0c?context=explore). (2023.06.10)
+* UserA and UserB added to docker-compose file and Dockerfile via args. (2023.06.10)
 
 <span style="color:#73130d"> Makefile: </span>
 

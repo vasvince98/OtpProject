@@ -32,7 +32,7 @@ services:
       - ./env/mysql.env
     platform: linux/x86_64
     volumes:
-      - data:/data/db
+      - data:/var/lib/mysql
 
 volumes:
   data:

@@ -5,24 +5,27 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.sql.Date;
 import java.time.LocalDateTime;
 
 @Entity
-public class TestEntity {
+public class History {
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private int id;
     private String name;
     private int number;
-    private LocalDateTime date;
+    private String date;
+    private String extension;
 
-    public TestEntity() {}
+    public History() {}
 
-    public TestEntity(String name, int number, LocalDateTime date) {
+    public History(String name, int number, String date, String extension) {
         this.name = name;
         this.number = number;
         this.date = date;
+        this.extension = extension;
     }
 
     public int getId() {
@@ -49,20 +52,30 @@ public class TestEntity {
         this.number = number;
     }
 
-    public LocalDateTime getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getExtension() {
+        return extension;
+    }
+
+    public void setExtension(String extension) {
+        this.extension = extension;
     }
 
     @Override
     public String toString() {
-        return "TestEntity{" +
+        return "History{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", number=" + number +
+                ", date=" + date +
+                ", extension='" + extension + '\'' +
                 '}';
     }
 }
