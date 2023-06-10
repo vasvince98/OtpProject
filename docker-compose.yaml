@@ -3,9 +3,26 @@ services:
   usera:
     platform: linux/x86_64
     hostname: userA
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+          - USERNAME=userA
     ports:
-      - "6788:6788"
+      - "8080:6788"
+    depends_on:
+      - mysql
+
+  userb:
+    platform: linux/x86_64
+    hostname: userB
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+          - USERNAME=userB
+    ports:
+      - "8089:6788"
     depends_on:
       - mysql
 

@@ -2,9 +2,11 @@ FROM eclipse-temurin:17-jdk
 
 VOLUME /tmp
 
-RUN useradd -m usera
+ARG USERNAME
 
-USER usera
+RUN useradd -m $USERNAME
+
+USER $USERNAME
 
 COPY target/*.jar app.jar
 
