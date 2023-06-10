@@ -24,11 +24,14 @@ public class HistoryService {
 
 
     public String getHistory() {
+        //todo: remove me
         historyRepository.findAll().forEach(System.out::println);
         return new Gson().toJson(historyRepository.findAll());
     }
 
     public int extensionCounter(File dir, String extension) {
+        //todo: store names in a set to avoid duplicates
+        //todo: return set.size()
         int count = 0;
         File[] files = dir.listFiles();
         if (files != null) {

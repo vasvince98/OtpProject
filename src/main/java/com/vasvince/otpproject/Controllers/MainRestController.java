@@ -18,13 +18,14 @@ public class MainRestController {
     }
 
 
-    @GetMapping("/getNumbers")
-    public String getNumbers() {
+    @GetMapping("/history")
+    public String history() {
         return historyService.getHistory();
     }
 
-    @PostMapping("/recursiveListing")
-    public int recursiveListing(@RequestParam String extension) {
+    @PostMapping("/getUniqueNames")
+    public int getUniqueNames(@RequestParam String extension) {
+        //todo: check other folders
         File rootDir = new File("/var");
         int numberOfFiles = historyService.extensionCounter(rootDir, extension);
         historyService.addToHistory(numberOfFiles, extension);

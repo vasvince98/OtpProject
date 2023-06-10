@@ -3,26 +3,30 @@ services:
   usera:
     platform: linux/x86_64
     hostname: userA
+    env_file:
+      - ./env/dbCredentials.env
     build:
       context: .
       dockerfile: Dockerfile
       args:
           - USERNAME=userA
     ports:
-      - "8080:6788"
+      - "8081:6788"
     depends_on:
       - mysql
 
   userb:
     platform: linux/x86_64
     hostname: userB
+    env_file:
+      - ./env/dbCredentials.env
     build:
       context: .
       dockerfile: Dockerfile
       args:
           - USERNAME=userB
     ports:
-      - "8089:6788"
+      - "8082:6788"
     depends_on:
       - mysql
 
