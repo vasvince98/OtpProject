@@ -7,10 +7,9 @@ pipeline {
                 echo 'Building...'
             }
         }
-        stage('Make') {
+        stage('Copy the workdir to home') {
             steps {
-                echo 'Testing'
-                echo env.BRANCH_NAME
+                sh 'cp -r . /home'
             }
         }
         stage('Deploy') {
