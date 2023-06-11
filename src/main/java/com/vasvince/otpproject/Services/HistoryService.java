@@ -25,7 +25,6 @@ public class HistoryService {
 
 
     public String getHistory() {
-        //todo: remove me
         historyRepository.findAll().forEach(System.out::println);
         return new Gson().toJson(historyRepository.findAll());
     }
