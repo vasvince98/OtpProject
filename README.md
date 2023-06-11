@@ -9,7 +9,7 @@
 * To build the project: <ins><strong>make build</strong></ins>
 * After the startup you can reach the swagger UI at [userA](http://localhost:8081/swagger-ui.html) and [userB](http://localhost:8082/swagger-ui.html) (At port: 8081 and 8082)
 * To stop the project: <ins><strong>make stop</strong></ins>
-* ⬆️ These ⬆️ will use docker. If you want to try it with podman, checkout for branch: try-podman (but it is unfortunately not working properly)
+* ⬆️ These ⬆️ will use docker. If you want to try it with podman, checkout for branch: try-podman (but unfortunately it is not working properly)
 * If we push to production branch Jenkins will clone the repo to my local server (right now it is only cloning, not building or running the project) There is also a branch protection rule, push is allowed only after pull request and review.
 
 ### Workflow Documentation
@@ -35,7 +35,7 @@ I will write my work steps in the following section:
 
 <span style="color:#73130d"> Podman: </span>
 
-*  I tried running the project with Podman, and it worked partially. The images were built, and MySQL was pulled from Docker Hub. However, it then attempted to pull my own images from docker.io instead of running them locally, and I have yet to figure out why. Although I will try to figure it out, but I will send to you the Docker version. You can find the podman version at branch: try-podman (2023.06.10)
+*  I tried running the project with Podman, and it worked partially. The images were built, and MySQL was pulled from Docker Hub. However, it then attempted to pull my own images from docker.io instead of running them locally, and I have not figured it out yet why. Although I will try to figure it out, but I will send to you the Docker version. You can find the podman version at branch: try-podman (2023.06.10)
 
 <span style="color:#73130d"> Makefile: </span>
 
