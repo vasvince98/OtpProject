@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
+import java.util.HashSet;
+import java.util.Set;
 
 @RestController
 public class MainRestController {
@@ -25,9 +27,10 @@ public class MainRestController {
 
     @PostMapping("/getUniqueNames")
     public int getUniqueNames(@RequestParam String extension) {
-        //todo: check other folders
-        File rootDir = new File("/var");
-        int numberOfFiles = historyService.extensionCounter(rootDir, extension);
+        // /var, /usr,
+        File rootDir = new File("/");
+        Set<String> fileNames = new HashSet<>();
+        int numberOfFiles = historyService.extensionCounter(rootDir, extension, fileNames);
         historyService.addToHistory(numberOfFiles, extension);
         return numberOfFiles;
     }

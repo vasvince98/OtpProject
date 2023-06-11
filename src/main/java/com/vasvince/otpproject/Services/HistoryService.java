@@ -10,6 +10,7 @@ import java.io.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 
 @Service
@@ -29,22 +30,24 @@ public class HistoryService {
         return new Gson().toJson(historyRepository.findAll());
     }
 
-    public int extensionCounter(File dir, String extension) {
-        //todo: store names in a set to avoid duplicates
-        //todo: return set.size()
-        int count = 0;
+    public int extensionCounter(File dir, String extension, Set<String> fileNames) {
         File[] files = dir.listFiles();
         if (files != null) {
             for (File file : files) {
+                //Exclude sys and proc directories
+                if (file.getName().equals("sys") || file.getName().equals("proc")) {
+                    continue;
+                }
                 if (file.isDirectory()) {
                     System.out.println("Searching directory ... " + file.getAbsoluteFile());
-                    count += extensionCounter(file, extension);
+                    extensionCounter(file, extension, fileNames);
                 } else if (file.getName().endsWith(extension)) {
-                    count++;
+                    fileNames.add(file.getName());
                 }
             }
         }
-        return count;
+        System.out.println("Number of files with extension " + extension + " is " + fileNames.size());
+        return fileNames.size();
     }
 
     public void addToHistory(int numberOfFiles, String extension) {
