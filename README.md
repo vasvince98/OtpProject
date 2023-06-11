@@ -4,9 +4,9 @@
 
 * Clone the project
 * I put the final version at the main branch
-* After cloning just simply run the following command: <strong>make</strong> or <strong>make start</strong>
-* To run it in attached mode: <strong>make attach</strong>
-* To build the project: <strong>make build</strong>
+* After cloning just simply run the following command: <ins><strong>make</strong></ins> or <ins><strong>make start</strong></ins>
+* To run it in attached mode: <ins><strong>make attach</strong></ins>
+* To build the project: <ins><strong>make build</strong></ins>
 * After the startup you can reach the swagger UI at [userA](http://localhost:8081/swagger-ui.html) and [userB](http://localhost:8082/swagger-ui.html) (At port: 8081 and 8082)
 * To stop the project: <strong>make stop</strong>
 * ⬆️ These ⬆️ will use docker. If you want to try it with podman, checkout for branch: try-podman (but it is unfortunately not working properly)
