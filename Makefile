@@ -1,11 +1,11 @@
 start:
-	docker-compose up -d
+	podman-compose up -d
 
 attach:
-	docker-compose up
+	podman-compose up
 
 build:
-	docker-compose up --build
+	podman-compose up --build
 
 stop:
-	docker-compose down
+	podman-compose down
