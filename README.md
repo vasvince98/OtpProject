@@ -9,7 +9,7 @@
 * To build the project: <ins><strong>make build</strong></ins>
 * After the startup you can reach the swagger UI at [userA](http://localhost:8081/swagger-ui.html) and [userB](http://localhost:8082/swagger-ui.html) (At port: 8081 and 8082)
 * To stop the project: <ins><strong>make stop</strong></ins>
-* ⬆️ These ⬆️ will use docker. If you want to try it with podman, checkout for branch: try-podman (but unfortunately it is not working properly)
+* ⬆️ These ⬆️ will use docker. If you want to try it with podman, checkout for branch: try-podman (but unfortunately it is not working properly for me, but I think my local podman is configured wrong)
 * If we push to production branch Jenkins will clone the repo to my local server (right now it is only cloning, not building or running the project) There is also a branch protection rule, push is allowed only after pull request and review.
 
 ### Workflow Documentation
